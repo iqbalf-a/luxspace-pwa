@@ -1,10 +1,23 @@
-import React from 'react';
+import React from "react";
+import Header from "./component/Header";
+import Hero from "./component/Hero";
+import Browse from "./component/Browse";
+import Arrived from "./component/Arrived";
+import Clients from "./component/Clients";
+import AsideMenu from "./component/AsideMenu";
+import Footer from "./component/Footer";
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <>
+      <Header />
+      <Hero />
+      <Browse />
+      <Arrived />
+      <Clients />
+      <AsideMenu />
+      <Footer />
+    </>
   );
 }
 

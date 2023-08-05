@@ -47,7 +47,6 @@ const Hero = () => {
         </div>
       </div>
       {showModal && <Modal handleShowModal={handleShowModal} />}
-      {/* <Modal /> */}
     </section>
   );
 };

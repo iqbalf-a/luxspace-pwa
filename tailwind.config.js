@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      sans: ['"Josefin Sans"'],
+      sans: ['"Open Sans"'],
       serif: [
         "ui-serif",
         "Georgia",

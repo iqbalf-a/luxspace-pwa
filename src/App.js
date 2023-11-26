@@ -12,9 +12,7 @@ function App() {
   const [items, setItems] = React.useState([]);
   const [offlineStatus, setOfflineStatus] = React.useState(!navigator.onLine);
 
-  function handleOfflineStatus() {
-    setOfflineStatus(!navigator.onLine);
-  }
+  const handleOfflineStatus = () => setOfflineStatus(!navigator.onLine);
 
   React.useEffect(
     function () {
@@ -40,8 +38,6 @@ function App() {
       handleOfflineStatus();
       window.addEventListener("online", handleOfflineStatus);
       window.addEventListener("offline", handleOfflineStatus);
-
-      
 
       return function () {
         window.removeEventListener("online", handleOfflineStatus);

@@ -7,12 +7,14 @@ import Clients from "./component/Clients";
 import AsideMenu from "./component/AsideMenu";
 import Footer from "./component/Footer";
 import Offline from "./component/Offline";
+import Splash from "./pages/Splash";
 
 function App() {
   const [items, setItems] = React.useState([]);
   const [offlineStatus, setOfflineStatus] = React.useState(!navigator.onLine);
 
   const handleOfflineStatus = () => setOfflineStatus(!navigator.onLine);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(
     function () {
@@ -39,6 +41,10 @@ function App() {
       window.addEventListener("online", handleOfflineStatus);
       window.addEventListener("offline", handleOfflineStatus);
 
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1500);
+
       return function () {
         window.removeEventListener("online", handleOfflineStatus);
         window.removeEventListener("offline", handleOfflineStatus);
@@ -49,14 +55,20 @@ function App() {
 
   return (
     <>
-      {offlineStatus && <Offline />}
-      <Header />
-      <Hero />
-      <Browse />
-      <Arrived items={items} />
-      <Clients />
-      <AsideMenu />
-      <Footer />
+      {isLoading === true ? (
+        <Splash />
+      ) : (
+        <>
+          {offlineStatus && <Offline />}
+          <Header />
+          <Hero />
+          <Browse />
+          <Arrived items={items} />
+          <Clients />
+          <AsideMenu />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

@@ -13,8 +13,7 @@ const Splash = () => {
               className="mx-auto mb-8"
             />
             <p className="mb-16 px-4">
-              Kami menyediakan furniture berkelas yangm membuat ruangan terasa
-              homey
+              Kami menyediakan furniture berkelas yang membuat ruangan terasa homey
             </p>
           </div>
         </div>
